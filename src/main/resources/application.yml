@@ -1,0 +1,27 @@
+build:
+  version: @project.version@
+  date: @timestamp@
+
+spring:
+  http:
+    multipart:
+      maxFileSize: 100Mb
+      maxRequestSize: 500Mb
+      fileSizeThreshold: 10Mb
+
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+
+admin:
+  console:
+    enabled: true
+
+management:
+  port: 8081
+  security:
+    enabled: false
+  trace:
+    include:

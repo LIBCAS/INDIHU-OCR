@@ -1,0 +1,30 @@
+stages:
+    - build
+    - deploy
+
+build:
+    stage: build
+    only:
+        - master
+    script:
+        - "mvn clean package"
+    artifacts:
+        paths:
+            - target/ocr-*jar
+
+deploy:
+    stage: deploy
+    dependencies:
+        - build
+    only:
+        - master
+    variables:
+        SERVER_ADDR: peter.srv.inqool.cz
+        PORT: 19556
+        USER: arclib
+    script:
+        - "cd target"
+        - "mv ocr-*jar ocr.jar"
+        - "ssh -p $PORT $USER@$SERVER_ADDR <<< $'sudo systemctl stop ocr'"
+        - "sftp -P $PORT $USER@$SERVER_ADDR <<< $'put ocr.jar projects/ocr/ocr.jar'"
+        - "ssh -p $PORT $USER@$SERVER_ADDR <<< $'sudo systemctl start ocr'"
