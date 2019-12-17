@@ -3,7 +3,7 @@ INDIHU OCR
 
 Badatelé se často setkávají se zajímavou informací obsaženou v digitalizovaných dokumentech, se kterou by potřebovali dále pracovat v textové podobě. Proto byl v rámci projektu INDIHU integrován open source OCR mechanismus do snad použitelného webového rozhraní, které umožní transformaci digitálního obrazového obsahu do formy, která by umožnila full-textové vyhledávání a další práci jako s běžným textovým souborem. V současné době umožňuje nástroj INDIHU OCR rozpoznávat texty z latiny, češtiny, ruštiny, němčiny, angličtiny, slovenštiny a francouzštiny.
 
-Online verze k volnému využití: http://inqooltest.libj.cas.cz/ocr-web/
+Online verze k volnému využití: https://ocr.indihu.cz/
 
 Technické informace: https://github.com/LIBCAS/INDIHU-OCR/wiki
 
